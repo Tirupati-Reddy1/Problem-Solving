@@ -513,3 +513,126 @@ duplicates, uniques = find_duplicates_and_uniques(arr)
 print("Duplicates:", duplicates)
 print("Uniques:", uniques)
 
+
+# question to find highest number in each array in nested array
+
+def find_max(my_list):
+    max=float("-inf")
+    for i in my_list:
+        max=i if i>max else max
+    return max
+list1=[]    
+
+res=[]
+for j in list1:
+    res.append(find_max(j))
+print(res)
+
+
+#binary search
+search_ele=int(input("Enter element to search: "))
+list1=[1,2,4,5,8,9]
+low=0
+high=len(list1)-1
+while low>=high:
+    mid=int((low+high)/2)
+    if list1(mid)==search_ele:
+        flag=True
+        print(mid)
+        break
+    elif list1(mid)>search_ele:
+        high=mid-1
+    else:
+        low=mid+1
+
+#counting occurances in number
+
+def count_digits(n):
+    n = str(n)  
+    counts = {str(i): n.count(str(i)) for i in range(10)}
+    print(counts)
+
+count_digits(11111234567890123) 
+
+# def has_duplicate_digits(num):
+#     num_str = str(num)
+#     return len(num_str) != len(set(num_str))
+
+# def check_duplicates(lst):
+#     return [has_duplicate_digits(num) for num in lst]
+
+# input_list = [202, 89, 112, 88]
+# output_list = check_duplicates(input_list)
+# print(output_list)
+
+#  Wap to check if each number in an  list contains duplicate digits, returning true for duplicates and false for unique digits.
+#         Input: [202,89,112,88]           Output:[true ,false ,true ,true]
+
+
+def has_duplicate_digits(num):
+    digits = str(num)
+    return any(digits.count(d) > 1 for d in digits)
+
+numbers = [202, 89, 112, 88]
+result = [has_duplicate_digits(num) for num in numbers]
+
+print(result)
+
+
+# Wap that takes an array of integers as input and calculates the sum of the digits of each number in the list. 
+#         Input: [202,89,112,88]           Output: [4,17,14,6]
+
+
+def sum_of_digits(num):
+    return sum(int(digit) for digit in str(num))
+
+numbers = [202, 89, 112, 88]
+result = [sum_of_digits(num) for num in numbers]
+
+print(result)
+
+
+# 8) Wap to check if the digits of each number in an list are in increasing order, returning true or false for each Increasing order or not
+#  Input: [568,89,112,88,571]     Output: [true,true ,false,false ,false]
+
+
+# max element in nested list
+
+
+
+def max_ele_in_list(list):
+    max=float("-inf")
+    for i in list:
+        max=i if i>max else max
+    return max
+
+my_list=[[9,-20,18],[14,29,26],[1,35,-18]]
+res=[]
+for j in my_list:
+    res.append(max_ele_in_list(j))
+print(res)   
+
+#  19) check if array is subset of another array or not .if the arr2 contains elements which are there in arr1 then it is a subset of an array.
+# arr1=[1,3,4,5,2]
+# arr2=[2,4,3,1,7.5.15]
+# output: arr1 is subset of arr2
+
+def Subset_Check(arr1, arr2):
+    for i in arr1:
+        found=False
+        for j in arr2:
+            if i==j:
+                found=True
+                break
+        if not found:
+                return False
+    return True
+arr1=[1,2,3,4,5]
+arr2=[1,2,3,4,5,6,7,8]
+if Subset_Check(arr1,arr2):
+    print("It is subset")
+else:
+    print("Not subset")    
+        
+
+        
