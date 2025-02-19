@@ -634,5 +634,36 @@ if Subset_Check(arr1,arr2):
 else:
     print("Not subset")    
         
+# increasing order check in each digit in array
 
-        
+lst = [258, 369, 456, 546, 312]
+
+for number in lst:
+    str_num = str(number)
+    increasing = True
+
+    for i in range(len(str_num) - 1):
+        if str_num[i] >= str_num[i + 1]:
+            increasing = False
+            break
+
+    print(f"{number} → {increasing}")
+
+     #increasing order check in each digit in array
+
+
+lst = [258, 369, 456, 546, 312]
+
+for number in lst:
+    str_num = str(number)
+    decreasing = True
+
+    for i in range(len(str_num) - 1):
+        if str_num[i] <= str_num[i + 1]:
+            decreasing = False
+            break
+
+    print(f"{number} → {decreasing}")
+
+
+    
